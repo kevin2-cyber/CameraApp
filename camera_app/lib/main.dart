@@ -17,7 +17,10 @@ Future<void> main() async {
 
   runApp(
     MaterialApp(
-      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Colors.black12,
+      ),
       home: TakePictureScreen(
         camera: firstCamera,
       ),
