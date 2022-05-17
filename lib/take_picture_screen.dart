@@ -13,7 +13,7 @@ class TakePictureScreen extends StatefulWidget {
   final CameraDescription? camera;
 
   @override
-  TakePictureScreenState createState() => TakePictureScreenState();
+  State<TakePictureScreen> createState() => TakePictureScreenState();
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {

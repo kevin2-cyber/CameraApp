@@ -13,19 +13,27 @@ Future<void> main() async {
   // Obtain a list of the available cameras on the device.
   final cameras = await availableCameras();
 
-  // Get a specific camera from the list of available cameras.
-  final firstCamera = cameras.first;
 
-  runApp(
-    MaterialApp(
-      theme: ThemeData.dark(),
-      home: TakePictureScreen(
-        // Pass the appropriate camera to the TakePictureScreen widget.
-        camera: firstCamera,
-      ),
-    ),
-  );
+
+  runApp(CameraApp());
 }
 
+class CameraApp extends StatelessWidget {
+  CameraApp({Key? key}) : super(key: key);
+
+
+  // Get a specific camera from the list of available cameras.
+  final firstCamera =  cameras.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark(),
+      home: TakePictureScreen(
+        camera: firstCamera,
+      ),
+    );
+  }
+}
 
 
